@@ -1,0 +1,73 @@
+@import "./reset";
+@import "./variables";
+@function weight($weight-name) {
+    @return map-get($font-weights,$weight-name);
+}
+@mixin mobile{
+    @media(max-width:$mobile) {
+        @content
+    }
+}
+.title {
+    color: $white;
+    text-align: center;
+    margin-top: 1rem;
+}
+.search {
+    display: flex;
+    justify-content: flex-end;
+    margin: 1rem;
+
+    #searcher {
+        padding: 0.5rem 0.5rem;
+        width: 30%;
+        border: none;
+        border-bottom: 1px solid $white;
+        outline: none;
+        border-radius: 10px;
+    }
+}
+.main {
+    display: flex;
+    margin: 30px;
+    flex-wrap: wrap;
+}
+.specs {
+        width: 600px;
+        height: 300px;
+        background: rgba( 255, 255, 255, 0.15 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 2.5px );
+-webkit-backdrop-filter: blur( 2.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+        margin: 1.3rem;
+        border-radius: 10px;
+
+        .info {
+            padding: 1rem;
+            color: $white;
+        }
+
+        .university,.country,.alpha_code {
+            margin-top: 1rem;
+            padding-bottom: 40px;
+    };
+}
+@media(max-width:$mobile) {
+    .title {
+        font-size: 10px;
+    }
+    .main {
+        display: block;
+    }
+    #searcher {
+        padding: 0.5rem 0.5rem;
+        width: 180%;
+    }
+    .specs {
+        width: 250px;
+        font-size: 15px;
+        margin:0.5rem;
+    }
+}
